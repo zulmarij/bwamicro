@@ -12,13 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      userId: {
-        field: "user_id",
+      user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
