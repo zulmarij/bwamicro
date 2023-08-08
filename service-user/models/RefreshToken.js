@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    "User",
+  const RefreshToken = sequelize.define(
+    "RefreshToken",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         allowNull: false,
       },
-      name: {
-        type: DataTypes.STRING,
+      token: {
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       email: {
@@ -17,23 +17,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
-      password: {
-        type: DataTypes.STRING,
+      userId: {
+        field: "user_id",
+        type: DataTypes.INTEGER,
         allowNull: false,
-      },
-      role: {
-        type: DataTypes.ENUM,
-        values: ["admin", "student"],
-        allowNull: false,
-        defaultValue: "student",
-      },
-      avatar: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      profession: {
-        type: DataTypes.STRING,
-        allowNull: true,
       },
       createdAt: {
         field: "created_at",
@@ -47,10 +34,10 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "users",
+      tableName: "refresh_tokens",
       timestamps: true,
     }
   );
 
-  return User;
+  return RefreshToken;
 };
