@@ -17,3 +17,4 @@ use App\Http\Controllers\MentorController;
 */
 
 Route::post('mentors', [MentorController::class, 'create']);
+Route::put('mentors/{id}', [MentorController::class, 'update']);
