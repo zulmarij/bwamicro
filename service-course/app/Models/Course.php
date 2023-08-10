@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $table = 'courses';
-    
+
     protected $fillable = [
         'name',
         'certificate',
@@ -18,6 +18,11 @@ class Course extends Model
         'level',
         'description',
         'mentor_id'
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:m:s',
+        'updated_at' => 'datetime:Y-m-d H:m:s'
     ];
 
     public function mentor() {
