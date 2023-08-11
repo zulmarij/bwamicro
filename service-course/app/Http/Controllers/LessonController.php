@@ -56,7 +56,7 @@ class LessonController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         $chapterId = request()->input('chapter_id');
@@ -90,7 +90,7 @@ class LessonController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         $lesson = Lesson::find($id);
