@@ -26,14 +26,27 @@ class Course extends Model
     ];
 
     public function mentor() {
-        return $this->belongsTo('App\Mentor');
+        return $this->belongsTo(Mentor::class);
     }
 
     public function chapters() {
-        return $this->hasMany('App\Chapter')->orderBy('id', 'ASC');
+        return $this->hasMany(Chapter::class)->orderBy('id', 'ASC');
     }
 
     public function images() {
-        return $this->hasMany('App\ImageCourse')->orderBy('id', 'DESC');
+        return $this->hasMany(ImageCourse::class)->orderBy('id', 'DESC');
+    }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
+    }
+
+    public function myCourses() {
+        return $this->hasMany(MyCourse::class);
+    }
+
+    public function lessonsChapters()
+    {
+        return $this->hasManyThrough(Lesson::class, Chapter::class);
     }
 }

@@ -18,7 +18,7 @@ class Chapter extends Model
         'updated_at' => 'datetime:Y-m-d H:m:s'
     ];
 
-    public function lesson() {
-        return $this->hasMany('App\Lesson')->orderBy('id', 'ASC');
+    public function lessons() {
+        return $this->hasMany(Lesson::class)->orderBy('id', 'ASC');
     }
 }
