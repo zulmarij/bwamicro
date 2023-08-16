@@ -1,0 +1,13 @@
+{
+    "name": "muham/test-midtrands",
+    "authors": [
+        {
+            "name": "Muhammad Zul Marij Rizqi Fathullah",
+            "email": "muhammadzulmarijrizqifathullah@gmail.com"
+        }
+    ],
+    "require": {
+        "midtrans/midtrans-php": "^2.5",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
