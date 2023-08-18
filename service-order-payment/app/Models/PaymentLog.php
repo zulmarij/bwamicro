@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentLog extends Model
 {
-    protected $table = 'orders';
+    protected $table = 'payment_logs';
 
     protected $fillable = [
         'status',
